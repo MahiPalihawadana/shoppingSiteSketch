@@ -1,0 +1,43 @@
+<app-header> </app-header> 
+
+<!--firts row-->
+<div class="row m-0 p-0">
+
+    <!--start side nav-->
+    <!-- <div class="col-xl-2 col-lg-3 col-md-4 col-sm-12 col-xs-12 m-0 px-0"
+        style="background-color:rgba(221, 237, 243, 0.537);">
+
+        <app-side-navbar></app-side-navbar>
+
+    </div> -->
+    <!--side nav end-->
+
+    <div class="col-xl-12 col-lg-9 col-md-8 col-sm-12 col-xs-12 m-0 p-0">
+        <!--body-->
+
+        <h2 class="my-2 mx-0">Search <b>Results</b></h2>
+
+        <div class="row m-0 p-0">
+            <!--body row-->
+
+            <!-- product1 detail box-->
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-4 col-xs-12 d-flex justify-content-center my-3 p-0"
+                *ngFor="let item of searchService.items">
+
+
+
+                <div class="card p-3 m-0" style="border-radius: 10px;">
+                    <img class="card-img-top" src={{item.image.src}} alt="Card image" style="width:190px;height: 35vh;">
+                    <div class="card-body">
+                        <h4 class="card-title">{{item.title}}</h4>
+                        <!-- <p class="item-price"><span>{{item.node.priceRange.minVariantPrice.currencyCode}} </span></p> -->
+                        <a (click)="viewClick(item)" class="btn btn-primary">View Product</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end of body row-->
+    </div>
+    <!--end of body-->
+</div>
+<!--end firts row-->

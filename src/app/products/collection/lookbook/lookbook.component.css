@@ -1,0 +1,55 @@
+/* product Grid */
+h2 {
+    color: #000;
+    font-size: 26px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    margin: 5px 0 80px;
+}
+
+h2 b {
+    color: #ffc000;
+}
+
+h2:after {
+    content: "";
+    width: 100px;
+    position: absolute;
+    margin: 0 auto;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.2);
+    left: 0;
+    right: 0;
+     bottom: -10px;
+   
+} 
+
+.btn{
+    background-color:  #183757de;; 
+} 
+
+.card-title{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.row {
+    /* background-color: rgba(195, 208, 212, 0.482);; */
+    background-color: rgba(232, 235, 236, 0.913);
+}
+
+.card{
+    background-color: rgba(250, 253, 253, 0.509);
+  
+}
+
+.card{
+    margin-top: 25px;
+    
+}
+
+
+.card-body h4{
+    color: rgb(99, 7, 7);
+}

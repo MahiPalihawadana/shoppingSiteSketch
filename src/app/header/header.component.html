@@ -1,0 +1,85 @@
+<!--top nav-->
+<nav class="navbar navbar-expand-md navbar-light bh-light px-2 m-0 ">
+  <a class="navbar-brand" href="#"><img src="./../../assets/logo1.jpg" alt="Logo"
+      style="height:50px; width:150px pr-2">Shopping Site</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+    aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav ml-auto">
+
+      <li class="nav-item mx-2" *ngIf="auth.isLoggedIn()">
+        <i class="fas fa-heart mx-1"></i> <a class="nav-link1 " [routerLink]="['/wishlist']"
+          style="text-decoration: none;">WishList</a>
+      </li>
+
+      <li class="nav-item mx-2">
+        <i class="fa fa-shopping-cart mx-1" aria-hidden="true"></i><a class="nav-link1 " [routerLink]="['/viewcart']"
+          style="text-decoration: none;">Cart</a>
+      </li>
+
+      <li class="nav-item mx-2" *ngIf="auth.isLoggedIn(); else elseBlock">
+        <i class="fas fa-sign-in-alt mx-1" aria-hidden="true"></i><a class="nav-link1 " (click)="logout()"
+          [routerLink]="['/']" style="text-decoration: none;">Logout</a>
+      </li>
+
+      <ng-template #elseBlock>
+        <li class="nav-item mx-2">
+          <i class="fas fa-sign-in-alt mx-1" aria-hidden="true"></i><a class="nav-link1 " [routerLink]="['/login']"
+            style="text-decoration: none;">Login</a>
+        </li>
+      </ng-template>
+
+      <!-- <li class="nav-item mx-2" >
+        <i class="fas fa-sign-in-alt mx-1" aria-hidden="true"></i><a class="nav-link1 " [routerLink]="['/login']"
+          style="text-decoration: none;">Login</a>
+      </li> -->
+
+
+
+
+      <li class="nav-item mx-2" *ngIf="!auth.isLoggedIn()">
+        <i class="fas fa-user-circle mx-1" aria-hidden="true"></i><a class="nav-link1 " [routerLink]="['/register']"
+          style="text-decoration: none;">Register</a>
+      </li>
+    </ul>
+  </div>
+
+</nav>
+
+<!--2nd nav Click -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link " [routerLink]="['/tops']">TOPS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " [routerLink]="['/skirts']">SKIRTS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " [routerLink]="['/pants']">PANTS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " [routerLink]="['/charity']">CHARITY PROJECTS</a>
+      </li>
+      <!-- <li class="nav-item">
+          <a class="nav-link " [routerLink]="['/collectionList']" >COLLECTION</a>
+        </li> -->
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/collection']">COLLECTIONS </a>
+      </li>
+    </ul>
+
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" [(ngModel)]="searchkey" [ngModelOptions]="{standalone: true}"
+        placeholder="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" (click)="search()" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<!--End of Nav-->

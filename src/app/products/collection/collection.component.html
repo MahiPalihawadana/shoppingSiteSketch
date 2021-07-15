@@ -1,0 +1,39 @@
+<app-header> </app-header>
+
+<div class="body">
+    <!-- <app-side-navbar></app-side-navbar> --> 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2><b>COLLECTIONS</b></h2>
+                <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0"> 
+
+                    <!-- Wrapper for carousel items -->
+                    <div class="carousel-inner">
+                        <!--===== Product Set1====== -->
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <!-- product1 detail box-->
+                                <div class="col-sm-3" *ngFor="let item of collections"> 
+                                    <div class="box">
+                                        <div class="slide-img">
+                                            <img src="{{item.imgUrl}}" class="img-fluid" alt="">
+                                            <!--overlayer---------->
+                                            <div class="overlay">
+                                                <!--buy-btn------>
+                                                <a  class="buy-btn" (click)="viewClick(item)">View Collection</a>
+                                            </div>
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>{{item.title}}</h4>
+                                            <h6>{{item.description}}</h6>  
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

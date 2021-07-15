@@ -1,0 +1,79 @@
+<app-header></app-header>
+
+<body style="background-image: url(../../assets/drk.jpg)">
+    <div class="register-dark">
+        <!-- <div class="alert alert-danger" *ngIf="errorMsg">
+        {{errorMsg}}
+    </div> -->
+        <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+            <a mdbBtn color="success" class="waves-light" mdbWavesEffect>Success message</a>
+            <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div *ngIf="alertError" class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Opps!</strong>{{alertMessage}}
+            <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <form #RegisterForm="ngForm" (ngSubmit)="onSubmit()" [mustMatch]="['password', 'confirmPassword']" novalidate>
+
+            <h2 class="sr-only">Login Form</h2>
+            <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+
+            <div class="form-group"><input class="form-control" required
+                    [class.is-invalid]="firstName.invalid && firstName.touched" #firstName="ngModel" type="text"
+                    name="firstName" placeholder="First Name" id="firstName" ngModel [(ngModel)]="userModel.firstName"
+                    [ngModelOptions]="{standalone: true}">
+            </div>
+            <small class="text-danger" [class.d-none]="firstName.valid || firstName.untouched">First Name is
+                required</small>
+
+            <div class="form-group"><input class="form-control" required
+                    [class.is-invalid]="lastName.invalid && lastName.touched" #lastName="ngModel" type="text"
+                    name="lastName" placeholder="Last Name" id="lastName" ngModel [(ngModel)]="userModel.lastName">
+            </div>
+            <small class="text-danger" [class.d-none]="lastName.valid || lastName.untouched">Last Name is
+                required</small>
+
+            <div class="form-group"><input class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                    required appEmailValidator="existingEmailsList" [class.is-invalid]="email.invalid && email.touched"
+                    #email="ngModel" type="email" name="email" placeholder="Email" id="email" ngModel
+                    [(ngModel)]="userModel.email">
+                <div *ngIf="email.errors && (email.valid || email.touched)">
+                    <small class="text-danger" *ngIf="email.errors.required">Email is required</small>
+                    <small class="text-danger" *ngIf="email.errors.pattern">Email must be a valid email address</small>
+                    <small class="text-danger" *ngIf="email.errors.email">Email already exists</small>
+                </div>
+            </div>
+
+            <div class="form-group"><input class="form-control" required
+                    [class.is-invalid]="password.invalid && password.touched" minlength="4" #password="ngModel"
+                    [ngClass]="{ 'is-invalid': RegisterForm.submitted && password.invalid }" type="password"
+                    name="password" placeholder="Password" id="password" ngModel [(ngModel)]="userModel.password">
+                <div *ngIf="password.errors && (password.valid || password.touched)">
+                    <small class="text-danger" *ngIf="password.errors.required">Password is required</small>
+                    <small class="text-danger" *ngIf="password.errors.minlength">Password must be at least 6
+                        characters</small>
+                </div>
+            </div>
+
+            <div class="form-group"><input class="form-control" required
+                    [class.is-invalid]="confirmPassword.invalid && confirmPassword.touched" #confirmPassword="ngModel"
+                    [ngClass]="{ 'is-invalid': RegisterForm.submitted && confirmPassword.invalid }" type="password"
+                    name="confirm password" placeholder="Confirm Password" id="confirmPassword" ngModel
+                    [(ngModel)]="userModel.confirmPassword">
+                <div *ngIf="confirmPassword.errors && (confirmPassword.valid || confirmPassword.touched)">
+                    <small class="text-danger" *ngIf="confirmPassword.errors.required">Confirm Password is
+                        required</small>
+                    <small class="text-danger" *ngIf="confirmPassword.errors.mustMatch">Passwords must match</small>
+                </div>
+            </div>
+            <div id="success" class="form-group"><button class="btn btn-primary btn-block"
+                    [disabled]="RegisterForm.form.invalid" type="submit">Register</button></div>
+            <div class="notify"><span id="notifyType" class=""></span></div>
+            <p>Do you have an accout? <a href="login">Login</a></p>
+        </form>
+    </div>
+</body>

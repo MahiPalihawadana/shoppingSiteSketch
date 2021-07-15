@@ -1,0 +1,62 @@
+<app-header> </app-header> 
+
+<div *ngIf="cartItems.length === 0" class="alert alert-info">Your Cart is Empty</div>
+
+<div *ngIf="cartItems.length > 0" class="container">
+    <div class="container">
+        <table id="cart" class="table table-hover table-condensed">
+            <thead class="thead">
+                <tr>
+                    <th style="width:50%">Product</th>
+                    <th style="width:10%">Price</th>
+                    <th style="width:8%">Quantity</th>
+                    <th style="width:22%" class="text-center">Subtotal</th>
+                    <th style="width:10%"></th>
+                </tr>
+            </thead>
+
+            <tbody *ngFor="let item of cartItems">
+
+                <tr>
+                    <td data-th="Product">
+                        <div class="row">
+                            <div class="col-sm-2 hidden-xs"><img src="{{item.productImgsrc}}" alt="..."
+                                    style="height:15vh; width:5vw" class="img-responsive" /></div>
+                            <div class="col-sm-10">
+                                <h4 class="nomargin">{{item.productTitle}}</h4>
+                                <h5 class="nomargin">{{item.variantOption}}</h5>
+                                <!-- <p>Product Details</p> -->
+                            </div>
+                        </div>
+                    </td>
+                    <td data-th="Price">{{item.variantPrice}}</td>
+                    <!--$1.99-->
+                    <td data-th="Quantity">
+                        <!-- <input type="number" class="form-control text-center" min="1" value="{{item.quantity}}" [(ngModel)]="item.newQnty" > -->
+                        <!-- <input type="number" class="form-control text-center" value="{{item.quantity}}" min="1" [(ngModel)]="item.newQuantity"> -->
+                        <input type="number" class="form-control text-center" value="{{qnty}}" min="1" [ngModel]="qnty" (ngModelChange)="onQntyChange($event)" >
+                        
+                    </td>
+                    <!-- <td data-th="Subtotal" class="text-center">{{(item.quantity*item.variantPrice)}}</td>  -->
+                    <td data-th="Subtotal" class="text-center">{{(item.variantPrice*qnty)}}</td>
+                    <!-- <td data-th="Subtotal" class="text-center">{{subTotal}}</td> -->
+                    <td class="actions" data-th="">
+                        <button class="btn btn-info btn-sm"><i class="fas fa-sync-alt" aria-hidden="true"></i></button>
+                        <button class="btn btn-danger btn-sm" (click)="deleteItm(item.productTitle)"><i
+                                class="fas fa-trash-alt"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i>Continue Shopping</a></td>
+                    <td colspan="2" class="hidden-xs"></td>
+                    <td class="hidden-xs text-center"><strong>Total:{{cartTotal}}</strong></td>
+                    <td><a class="btn btn-success btn-block" style="height:5vh;width:8vw;"
+                            (click)="handleCheckout()">Checkout
+                            <i class="fa fa-angle-right"></i></a></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

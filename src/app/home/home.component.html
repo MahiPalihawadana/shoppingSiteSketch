@@ -1,0 +1,250 @@
+<app-header></app-header> 
+
+<div class="body">
+
+  <!--slider-->
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="./../../assets/Home/h1.jpg" class="d-block1" style="width:100vw; height: 100vh;" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <div class="container">
+            <div class="row justify-content-start text-left">
+              <div class="col-lg-8 mx-auto">
+                <h2><b>"SHOP MORE... WIN MORE..."</b></h2>
+                <!-- <h1>New Arrivals</h1> -->
+                <button class="btn0 mt-3 ml-2">SHOP NOW</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="./../../assets/Home/p1.jpg" class="d-block" style="width:100vw; height: 100vh;" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <div class="container">
+            <div class="row justify-content-start text-left">
+              <div class="col-lg-8 mx-auto">
+                <p>SUMMER ESSENTIALS</p>
+                <h1>New Arrivals</h1>
+                <button class="btn0 mt-3 ml-2">SHOP NOW</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="./../../assets/Home/p2.jpg" class="d-block2" style="width:50vw; height: 100vh;" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <div class="container">
+            <div class="row justify-content-start text-left">
+              <div class="col-lg-8 mx-auto">
+                <p>TOPS COLLECTION</p>
+                <h1>New Arrivals</h1>
+                <button class="btn0 mt-3 ml-2">SHOP NOW</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="./../../assets/Home/p3.jpg" class="d-block2" style="width:50vw; height: 100vh;" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <div class="container">
+            <div class="row justify-content-start text-left">
+              <div class="col-lg-8 mx-auto">
+                <p>SKIRTS COLLECTION</p>
+                <h1>Comfort|Style|Trend</h1>
+                <button class="btn0 mt-3 ml-2">SHOP NOW</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="./../../assets/Home/p4.jpg" class="d-block" style="width:50vw; height: 100vh;" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <div class="container">
+            <div class="row justify-content-start text-left">
+              <div class="col-lg-8 mx-auto">
+                <p>STYLE FOR EVERY STORY</p>
+                <h1>Find Yours</h1>
+                <button class="btn0 mt-3 ml-2">SHOP NOW</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!--Services section-->
+  <section class="sub">
+    <div class="container py-5 text-white">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+          <div class="row">
+            <div class="col-lg-2">
+              <span><i class="fas fa-sync"></i></span>
+            </div>
+            <div class="col-lg-10">
+              <h5>Return and Exchange</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+          <div class="row">
+            <div class="col-lg-2">
+              <span><i class="fas fa-gift"></i></span>
+            </div>
+            <div class="col-lg-10">
+              <h5>Recieve Gift Cards</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+          <div class="row">
+            <div class="col-lg-2">
+              <span><i class="fas fa-users"></i></span>
+            </div>
+            <div class="col-lg-10">
+              <h5>Online Support</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+          <div class="row">
+            <input type="text" placeholder="Your Email">
+            <button class="btn1">SUBSCRIBE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--End of services section-->
+
+
+  <!-- Select Categories -->
+  <div class="category m-0 p-0">
+
+    <div class="row">
+
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-6 " id="category" *ngFor="let s of collectiondetails">
+
+        <div class="card p-5 view overlay zoom" style="border: 0px;">
+          <img class="card-img-top rounded-circle" src="{{s.node.image.originalSrc}}" alt="Card image"
+            style="display:block">
+          <div class="card-img-overlay  text-center">
+            <h4 class="card-title" style="  position: absolute;
+            top: 50%;
+            left: 30%;color: white;">{{s.node.title}}</h4>
+
+          </div>
+        </div>
+
+      </div>
+
+
+
+
+
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12 ">
+
+        <div class="card p-5" style="border: 0px;">
+          <img class="card-img-top rounded-circle" src="../../assets/Home/new4.jpg" alt="Card image"
+            style="display:block">
+
+          <div class="card-img-overlay text-center">
+
+            <h4 class="card-title" style="  position: absolute;
+            top: 50%;
+            left: 30%; color: white;">Collections</h4>
+
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+  <!--End of select Categories-->
+
+  <!-- <section id="catogories" class="categor py-5">
+  <div class="container">
+    <div class="row">
+      <div class="cil-10 mx-auto col-sm-6 text-center">
+        <h1 class="text-capitaloze product-title">Categories</h1>
+      </div>
+    </div>
+    <div class="row product-items" id="product-items">
+      <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+        <div class="card single-item">
+          <div class="img-container">
+            <img src="../../assets/Home/new1.jpg" class="card-img-top product-img" class="rounded-circle" width="300"
+              height="300">
+          </div>
+          <div class="card-body">
+            <div class="card-ext d-flex justify-content-between text-capitalize">
+              <h5 id="product-name">Pants</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+        <div class="card single-item">
+          <div class="img-container">
+            <img src="../../assets/Home/new2.jpg" class="card-img-top product-img" class="rounded-circle" width="300"
+              height="300">
+          </div>
+          <div class="card-body">
+            <div class="card-ext d-flex justify-content-between text-capitalize">
+              <h5 id="product-name">Tops</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+        <div class="card single-item">
+          <div class="img-container">
+            <img src="../../assets/Home/new3.jpg" class="card-img-top product-img" class="rounded-circle" width="300"
+              height="300">
+          </div>
+          <div class="card-body">
+            <div class="card-ext d-flex justify-content-between text-capitalize">
+              <h5 id="product-name">Skirts</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+        <div class="card single-item">
+          <div class="img-container">
+            <img src="../../assets/Home/new4.jpg" class="card-img-top product-img" class="rounded-circle" width="300"
+              height="300">
+          </div>
+          <div class="card-body">
+            <div class="card-ext d-flex justify-content-between text-capitalize">
+              <h5 id="product-name" class="center">Collection</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>   -->
+  <!-- End of select category -->
+
